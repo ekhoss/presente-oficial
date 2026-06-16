@@ -1267,10 +1267,10 @@ body {
 
 @media (max-width: 768px) {
   .main-layout {
-    transform: scale(0.65);
+    transform: scale(0.75);
     transform-origin: top left;
-    width: 154%;
-    height: 154%;
+    width: 133%;
+    height: 133%;
   }
 
   html, body {
