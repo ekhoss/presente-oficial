@@ -1266,25 +1266,15 @@ body {
 
 
 @media (max-width: 768px) {
-  html, body {
-    overflow-y: auto;
-  }
-
   .main-layout {
-    padding: 5px;
+    transform: scale(0.65);
+    transform-origin: top left;
+    width: 154%;
+    height: 154%;
   }
 
-  .left-panel {
-    width: 150px;
-  }
-
-  .book {
-    height: 75vh;
-    transform: scale(0.8);
-    transform-origin: center center;
-  }
-
-  .book-area {
-    padding: 0;
+  html, body {
+    overflow: auto;
   }
 }
+
