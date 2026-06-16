@@ -1268,40 +1268,23 @@ body {
 @media (max-width: 768px) {
   html, body {
     overflow-y: auto;
-    height: auto;
   }
 
   .main-layout {
-    flex-direction: column;
-    padding: 8px;
-    gap: 12px;
+    padding: 5px;
   }
 
   .left-panel {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-
-  .book-area {
-    width: 100%;
-    padding: 0;
-  }
-
-  .scene {
-    width: 100%;
+    width: 150px;
   }
 
   .book {
-    flex-direction: column;
-    height: auto;
+    height: 75vh;
+    transform: scale(0.8);
+    transform-origin: center center;
   }
 
-  .page {
-    min-height: 400px;
-  }
-
-  .spine {
-    display: none;
+  .book-area {
+    padding: 0;
   }
 }
