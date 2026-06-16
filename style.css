@@ -1263,15 +1263,3 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
 ::-webkit-scrollbar-thumb { background: #8b4513; border-radius: 3px; }
-
-
-@media (max-width: 768px) {
-  html, body {
-    overflow: auto;
-  }
-
-  .main-layout {
-    min-width: 900px;
-  }
-}
-
