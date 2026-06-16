@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i love you, babe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== TELA DE SENHA ===== -->
+  <div class="password-screen" id="passwordScreen">
+    <div class="password-box">
+      <div class="pwd-hearts">♥ ♥ ♥</div>
+      <h2 class="pwd-title"> Olá, meu amor! Espero que você goste e aproveite bastante o seu presente pelos proximos dias. </h2>
+      <p class="pwd-subtitle">Digite a senha para abrir seu presente</p>
+      <div class="pwd-input-wrap">
+        <input type="password" id="pwdInput" class="pwd-input" placeholder="••••••" maxlength="20"
+               onkeydown="if(event.key==='Enter') checkPassword()" />
+        <button class="pwd-btn" onclick="checkPassword()">Abrir ♥</button>
+      </div>
+      <p class="pwd-error" id="pwdError"></p>
+    </div>
+  </div>
+
+  <!-- ===== LAYOUT PRINCIPAL ===== -->
+  <div class="main-layout">
+
+    <!-- ======== PAINEL ESQUERDO ======== -->
+    <div class="left-panel">
+
+      <!-- Título Happy Valentine's Day -->
+      <div class="title-block">
+        <div class="title-hearts">♥ ♥</div>
+        <h1 class="title-main">Happy<br><span>Birthday</span><br>my honey</h1>
+        <div class="title-hearts">♥ ♥</div>
+      </div>
+
+      <!-- Frase -->
+      <div class="quote-panel">
+        Every memory<br>with you is my<br>favorite song. ♪
+      </div>
+
+      <!-- Player de música -->
+      <div class="music-player">
+        <div class="music-top-row">
+          <div class="music-cover" id="musicCover">
+            <div class="cover-placeholder">♪</div>
+          </div>
+          <div class="music-info">
+            <div class="music-title" id="musicTitle">Lover</div>
+            <div class="music-artist" id="musicArtist">Taylor Swift</div>
+          </div>
+          <div class="music-heart">♥</div>
+        </div>
+        <div class="music-progress">
+          <span class="time-current" id="timeCurrent">0:00</span>
+          <div class="progress-bar" id="progressBar" onclick="seekAudio(event)">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="time-total" id="timeTotal">0:00</span>
+        </div>
+        <div class="music-controls">
+          <button onclick="prevSong()" title="Anterior">⏮</button>
+          <button onclick="togglePlay()" id="playBtn" class="play-btn" title="Play/Pause">▶</button>
+          <button onclick="nextSong()" title="Próxima">⏭</button>
+        </div>
+      </div>
+
+      <!-- Contador -->
+      <div class="countdown-block">
+        <div class="countdown-label">PRÓXIMA CARTA</div>
+        <div class="countdown-grid">
+          <div class="cd-item"><span id="cdDays">00</span><small>DIAS</small></div>
+          <div class="cd-item"><span id="cdHours">00</span><small>HORAS</small></div>
+          <div class="cd-item"><span id="cdMins">00</span><small>MIN</small></div>
+          <div class="cd-item"><span id="cdSecs">00</span><small>SEG</small></div>
+        </div>
+        <div class="countdown-info">será aberta em <span id="nextLetterDate">21/03</span></div>
+      </div>
+
+      <!-- Botões Memórias / Cartas -->
+      <div class="nav-buttons">
+        <button class="nav-btn" onclick="showSection('memorias')">
+          <span>⭐</span> Memórias
+        </button>
+        <button class="nav-btn" onclick="showSection('cartas')">
+          <span>✉</span> Cartas
+        </button>
+      </div>
+
+      <div class="made-with">feito com amor, pelo seu amor.</div>
+    </div><!-- end left-panel -->
+
+    <!-- ======== ÁREA DO CADERNO ======== -->
+    <div class="book-area">
+      <div class="scene">
+        <div class="book">
+
+          <!-- ======== PÁGINA ESQUERDA ======== -->
+          <div class="page page-left">
+
+            <!-- Bilhete de frase no topo -->
+            <div class="sticker-note sticker-top">
+              When it all burns down <br>I will hold you close for the minute,<br>I'll hold you for the minute it takes.
+            </div>
+            <!-- Coração central com foto -->
+            <div class="heart-area">
+              <div class="heart-frame" id="heartFrame">
+                <!--
+                  COMO ADICIONAR SUA FOTO:
+                  Substitua o conteúdo abaixo por: <img src="sua-foto.jpg" />
+                -->
+                 <img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/5010766266838486259.jpg" />
+                  
+              </div>
+              <div class="deco deco-rose">🦇</div>
+              <div class="deco deco-sparkle">✦</div>
+              <div class="deco deco-sparkle2">✦</div>
+            </div>
+
+            <!-- Recado à esquerda -->
+            <div class="note-middle">
+              você é o meu bem mais precioso<br>, em todo universo.<br> eu irei te amar para todo sempre, e sempre.
+            </div>
+
+            <!-- Dois polaroids na parte de baixo -->
+            <div class="polaroids">
+              <div class="polaroid polaroid-left" onclick="openLightbox('photo1')">
+                <div class="polaroid-inner">
+                  <div class="polaroid-img" id="photo1">
+                    <!--
+                      COMO ADICIONAR FOTO:
+                      Substitua por: <img src="foto1.jpg" />
+                    -->
+                    <img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/5010766266838486255.jpg" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="polaroid polaroid-right" onclick="openLightbox('photo2')">
+                <div class="polaroid-inner">
+                  <div class="polaroid-img" id="photo2">
+                    <!--
+                      COMO ADICIONAR FOTO:
+                      Substitua por: <img src="foto2.jpg" />
+                    -->
+                     <img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/5010766266838486254.jpg" />
+                  </div>
+                  <div class="polaroid-caption">você e eu, sempre.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nota e urso de baixo -->
+            <div class="note-bottom-left">meu lugar favorito ♡</div>
+            <div class="sticker-bear">🧸</div>
+
+          </div><!-- end page-left -->
+
+          <!-- ======== ESPIRAL ======== -->
+          <div class="spine">
+            <div class="spiral" aria-hidden="true">
+              <div class="ring" style="top:6%"></div>
+              <div class="ring" style="top:14%"></div>
+              <div class="ring" style="top:22%"></div>
+              <div class="ring" style="top:30%"></div>
+              <div class="ring" style="top:38%"></div>
+              <div class="ring" style="top:46%"></div>
+              <div class="ring" style="top:54%"></div>
+              <div class="ring" style="top:62%"></div>
+              <div class="ring" style="top:70%"></div>
+              <div class="ring" style="top:78%"></div>
+              <div class="ring" style="top:86%"></div>
+              <div class="ring" style="top:94%"></div>
+            </div>
+          </div>
+
+          <!-- ======== PÁGINA DIREITA ======== -->
+          <div class="page page-right">
+
+            <div class="letters-header">
+              <h2>Cartas para abrir<br>nos nossos dias especiais ♥</h2>
+            </div>
+
+            <div class="letters-list">
+
+              <!-- CARTA 01 — DISPONÍVEL -->
+        <div class="letter-card locked"
+     data-title="Carta 01"
+     data-date="16/06"
+     data-content="Olá, meu amor
+
+Se você está lendo isso agora, então significa que finalmente chegou o momento de abrir a sua primeira carta.
+
+Talvez, olhando de fora, sejam apenas cartas, folhas de papel e algumas palavras escritas à mão. Mas, para mim, isso é muito mais do que isso. Este presente é uma coleção de sentimentos, de pensamentos que tive sobre você em dias comuns e extraordinários, de coisas que às vezes não consigo dizer em voz alta, mas que sempre existiram dentro do meu coração.
+
+Eu queria lhe dar algo que durasse para sempre, gostaria que sempre se lembrasse do quanto eu a amo todos os dias um pouco mais, e de como sou grato por este mês. Caso você não tenha percebido esse é meu mês da sorte, é os meus dígitos da sorte. E eu estou ansioso para chegar neste dia e poder comemorar com você ao seu lado.
+Então, antes de qualquer outra coisa, quero que esta primeira carta seja uma introdução. Porque amar você tem sido descobrir que algumas pessoas chegam à nossa vida e a transformam em algo completamente diferente. Você transformou meus dias em algo mais leve, mais bonito e mais cheio de significado. Você se tornou alguém que eu espero encontrar em cada manhã, alguém que faz as pequenas coisas parecerem especiais e os momentos simples se tornarem memórias que quero guardar para sempre. Você é o meu conforto nos dias difíceis, a razão de muitos dos meus sorrisos e uma das coisas mais preciosas que a vida me deu.
+Eu acho que não existe dias em que meu primeiro pensamento não seja você, e sempre que acordo eu a desejo, é como se eu estivesse afogado na agua e você fosse o meu ar, meu suspiro, um sopro que vem para me acalentar nos meus dias. E em dias de chuva eu ouço um sussurro, bem baixo enquanto as gotas caem, eu ouço meu coração clamando seu nome, é sempre familiar nos dias de hoje, escutar seu nome. Saber o que pensa, sentir o que sente, olhar por seus sonhos, amar você é como um experiencia divina, algo ligado a maior que mim. É como se eu tivesse passado a minha vida inteira caminhando por estradas diferentes apenas para, um dia, encontrar você. E, desde então, tudo parece ter feito sentido.">
+
+  <div class="letter-icon lock">🔒</div>
+
+  <div class="letter-info">
+    <div class="letter-title">Carta 01</div>
+    <div class="letter-date">Para abrir em 16/06</div>
+  </div>
+
+  <div class="badge-locked">BLOQUEADA</div>
+</div>
+
+              <!-- CARTA 02 -->
+              <div class="letter-card locked" data-title="Carta 02" data-date="17/06" data-content="Querida,
+
+Eu acho que existem pessoas que entram em nossas vidas e permanecem apenas como lembranças, e existem aquelas que se tornam uma parte de nós, tão profundamente que já não sabemos mais onde terminamos e onde elas começam. Você se tornou isso para mim. Às vezes, quando tudo está em silêncio, eu ainda me pego pensando em você como se o meu coração estivesse constantemente voltando para o mesmo lugar, como se todas as estradas, todos os pensamentos e todas as versões de mim inevitavelmente levassem até você. Há algo em amar você que parece maior do que eu consigo compreender, algo que me faz olhar para o mundo de uma maneira diferente, e sinceramente cada dia meu carrega um pouco da sua presença. E, de vez em quando, me pego desejando que você pudesse ver a si mesma pelos meus olhos, apenas por um instante, para entender o tamanho do que se tornou dentro de mim. Porque amar você é viver com a estranha e bela sensação de que encontrei algo que esperei a vida inteira sem sequer saber que estava procurando. E, se eu pudesse guardar uma única certeza para sempre, seria esta. Em todos os lugares em que o meu coração repousa, em todos os momentos de silêncio e em todos os pequenos instantes que parecem eternos, ainda é você que eu encontro. Você e eu nos tornamos um só, somos alguém de um único coração, única alma. Se alguém me chamasse pelo teu nome eu responderia, porque eu vivo você, eu vejo você, eu a respiro.">
+                <div class="letter-icon lock">🔒</div>
+                <div class="letter-info">
+                  <div class="letter-title">Carta 02</div>
+                  <div class="letter-date">Para abrir em 17/06</div>
+                </div>
+                <div class="badge-locked">BLOQUEADA</div>
+              </div>
+
+              <!-- CARTA 03 -->
+              <div class="letter-card locked" data-title="Carta 03" data-date="18/06" data-content="Olá, grande amor da minha vida.
+
+Antes de qualquer coisa, feliz aniversário, meu bem. Hoje é completamente o seu dia, o dia em que o universo decidiu reunir estrelas, constelações e pequenos milagres para criar os seus olhos, o desenho do seu sorriso e a pessoa extraordinária que você é. Espero, do fundo do meu coração, que este seja um dia tão bonito quanto você merece. Um dia leve, feliz e cheio de amor, porque, para mim, comemorar o seu aniversário é também comemorar a sorte de viver em um mundo em que você existe. E hoje, a razão desta carta é um pouco diferente. Ela não é apenas uma declaração de amor, mas uma pequena explicação para cada presente que está em suas mãos. Porque nenhum deles foi escolhido por acaso. Cada um carrega um pensamento, uma lembrança, um desejo ou uma pequena parte do que sinto por você. Talvez, olhando de fora, sejam apenas presentes. Mas, para mim, são pequenos símbolos do quanto você é amada.
+
+O chaveiro do Banguela, desse filme que é tão especial e querido para você. Esse chaveiro, é um lembrete que você sempre terá uma casa para voltar. Assim como Banguela tem o soluço para retornar e chamar de lar, você sempre terá a mim! você sempre me teve. E eu sempre estarei lhe esperando, para todo sempre. Você sempre terá um lugar para voltar e chamar de seu, pode não ser Berk, mas será um canto aconchegante que você possa jogar comigo e domar quantos dragões você desejar. Um lugar nosso, um universo nosso.
+
+O caderno do pequeno príncipe para você anotar tudo que seu coração achar necessário, porque tudo que vem de você me cativa, e me cativa tanto que todos os dias eu me apaixono por uma nuance de sua alma. Você é diferente de todas as rosas, não por me cativar, mas você sempre se destacou de todo o resto do mundo. É como se você fosse a rosa mais bela e linda que eu já tive o prazer de colocar os olhos, você me cativou por ser você, do seu jeito, sendo quem é. Esse mesmo jeito me mostrou um universo completamente novo, me mostrou um lado que eu não enxergava da lua...com esses grandes olhos esbugalhados. E esse pequeno caderno, quero que guarde o que mais quiser nele, quero que mostre sua escrita, seus sonhos, suas preocupações, porque e é isso que faz você ser você para mim.
+
+Sobre a caixa de lego quero que entenda que se eu pudesse lhe mandaria todas as flores do mundo, mandaria para você tudo que tenho mais de bonito, todos os jardins possíveis, mas enquanto isso não pode acontecer, saiba que poderei lhe dar um jardim de lego.
+
+Sobre a pequena caixa de musica, saiba que do outro lado do oceano não existe inimigos. Do outro lado do oceano, existe uma bela paisagem, com cheiro de lar, um lugar para você descansar após uma luta contra os maiores e mais horríveis titãs (Claramente estou falando do pior de todos...o Zeke.), talvez quando olhar para esse presente saiba que ainda exista liberdade, um lugar para você. E eu estarei aqui, sempre aqui para te acompanhar em cada batalha e luta, até o seu oceano. Eu te amo.
+
+
+Bom! agora vem algo especial, nica. Para você que é tão pequenina e especial para mim. Minha garotinha adorável. 
+A caixinha de curativos e o pequeno ratinho de montar. Eu quero que você saiba que essa caixinha de curativos pode não sarar todas as suas feridinhas, mas sim, te acolher um pouco mais, queria eu poder colocar cada curativo em você, mas enquanto não posso, faça isso ok? é de um desenho que você ama muito nica. E o ratinha de montar, é porque ele é bonitinho igual você, e você poderá desmonta-lo quantas vezes necessário para criar outras figuras legais! você é muito especial e eu a amo muito!
+
+E também um chaveiro extra caso tenha mais de uma chave para guardar!
+
+Eu espero, verdadeiramente, que você goste de cada um desses presentes. Mas, mais do que isso, espero que, sempre que olhar para eles, você se lembre de uma coisa: você é profundamente amada. Nenhum presente que eu compre será capaz de medir tudo o que sinto por você, porque o que sinto é grande demais para caber em caixas, embrulhos ou palavras. Ainda assim, coloquei um pedacinho do meu coração em cada um deles. Feliz aniversário, meu anjo. Eu amo você, hoje e em todos os dias que ainda virão.
+">
+                <div class="letter-icon lock">🔒</div> 
+                <div class="letter-info">
+                  <div class="letter-title">Carta 03</div>
+                  <div class="letter-date">Para abrir em 18/06</div>
+                </div>
+                <div class="badge-locked">BLOQUEADA</div>
+              </div>
+
+              <!-- CARTA 04 -->
+              <div class="letter-card locked" data-title="Carta 04" data-date="19/06"data-content="Mikros,
+
+Eu acho que chegou um ponto em que te amar deixou de ser algo que eu sinto e passou a ser algo que me atravessa. Não é mais apenas pensamento ou saudade, é algo constante, como se você tivesse se espalhado por todas as partes de mim sem pedir permissão, ocupando espaços que eu nem sabia que existiam. Às vezes eu tento entender quando isso ficou tão intenso, mas a verdade é que não existe um começo claro, só essa certeza crescente de que você se tornou inevitável para mim. Eu te encontro em tudo: no silêncio mais pesado, no som mais leve, nos dias comuns e até nos dias em que nada parece se encaixar para mim. E isso me desarma, porque não é um amor que eu controlo, é um amor que me atravessa e me molda, como se cada pensamento meu acabasse voltando para você sem esforço, como se meu coração tivesse aprendido um único caminho e nunca mais quisesse aprender outro. Eu não sei mais viver como se você fosse apenas alguém importante na minha vida, porque você já se tornou parte do que eu sou, e isso é bonito e assustador ao mesmo tempo, como olhar para algo infinito e ainda assim querer chegar mais perto. E talvez seja isso que me faça continuar te amando assim: a sensação de que, mesmo quando eu já não tiver palavras, ainda vai existir você dentro de mim, constante, viva, impossível de apagar. Você é a minha vela acesa, é a minha lua que tanto trás inspiração para mim.">
+                <div class="letter-icon lock">🔒</div>
+                <div class="letter-info">
+                  <div class="letter-title">Carta 04</div>
+                  <div class="letter-date">Para abrir em 19/06</div>
+                </div>
+                <div class="badge-locked">BLOQUEADA</div>
+              </div>
+
+              <!-- CARTA 05 -->
+              <div class="letter-card locked" data-title="Carta 05" data-date="20/06" data-content="Os gregos antigos acreditavam em algo bonito. Diziam que, há muito tempo, os seres humanos eram inteiros, completos, feitos de duas partes unidas em um só corpo. Mas os deuses, temendo a força e a grandiosidade dessas criaturas, as separaram em duas metades e as espalharam pelo mundo. E, desde então, cada alma passou a caminhar pela vida com uma saudade que não sabia explicar, procurando algo que lhe faltava, procurando alguém que a fizesse sentir inteira outra vez. E sinceramente isso é verdade, mas não conte a ninguém que seu deus está lhe contando isso /j.
+
+Nunca pensei se isso se aplica aos deuses, nunca parei para pensar que eles poderiam ter tirado uma parte tão preciosa de mim...mas sei de uma coisa: desde que encontrei você, algumas partes de mim parecem ter voltado para casa. Há uma familiaridade no seu sorriso, um conforto na sua voz, quando te ouvi cantar pela primeira vez, aqueles pontos, era como ouvir uma alma tão conhecida que me embalou tão profundo, e uma paz na sua presença que me fazem pensar que talvez existam encontros que não acontecem por acaso. Talvez existam pessoas que reconhecemos antes mesmo de entendermos por quê. Você e faz senti como se, em meio a bilhões de pessoas, o meu coração tivesse finalmente encontrado algo que procurava havia muito tempo.
+
+Quando eu fico muito tempo em silencio eu penso que talvez existe algo de verdadeiro naquele antigo mito, então talvez as nossas almas tenham se conhecido muito antes desta vida e apenas tenham se reencontrado agora.
+
+E se isso for verdade, então eu sou profundamente grato por ter encontrado você de novo.
+
+Porque, entre todas as estradas que eu poderia ter seguido, entre todos os mundos possíveis e entre todas as pessoas que eu poderia ter amado, o meu coração acabou encontrando o seu.
+
+E, de alguma forma, isso não me parece destino, sabe por que? porque eu tenho certeza que eu te encontraria em qualquer outro lugar, eu acharia você micros, eu agarraria você com todas as minhas forças, te faria minha, você é minha. é minha mas não como um fragmento de mim, você é minha como uma alma, você sou eu e eu necessito de maneira muito crua de você. Então não se preocupe, onde seja, o paraiso ou inferno, eu estarei com você. Minha alma está colada na sua.
+
+Então, estas cartas terminam aqui, quero que uma coisa permaneça com você: você foi, e continua sendo, uma das experiências mais bonitas da minha vida. Você me mostrou partes de mim que eu ainda não conhecia e transformou dias comuns em memórias que quero guardar para sempre. E, se algum dia você abrir esta carta de novo, talvez muito tempo depois, espero que consiga sentir o que eu sinto agora enquanto escrevo estas palavras: uma profunda gratidão por ter encontrado você neste imenso mundo.
+
+E, mesmo quando as páginas acabarem, meu amor por você continuará existindo nos lugares mais simples: nas músicas que me lembram você, nos céus que eu quiser lhe mostrar, nas histórias que ainda quero viver ao seu lado e em cada parte de mim que aprendeu, por sua causa, o que significa amar alguém de verdade.
+
+Com todo o meu coração,
+
+Eu, quiabo.">
+                <div class="letter-icon lock">🔒</div>
+                <div class="letter-info">
+                  <div class="letter-title">Carta 05</div>
+                  <div class="letter-date">Para abrir em 20/06</div>
+                </div>
+                <div class="badge-locked">BLOQUEADA</div>
+              </div>
+
+            </div>
+
+            <div class="letters-footer">
+              Espero que você goste de cada carta<br> Você é minha mikros, eu a amo! lembre-se disso.
+            </div>
+            <div class="paper-clip">📎</div>
+
+          </div><!-- end page-right -->
+
+        </div><!-- end book -->
+      </div><!-- end scene -->
+    </div><!-- end book-area -->
+
+  </div><!-- end main-layout -->
+
+  <!-- ======== ROLO DE FILME (parte de baixo) ======== -->
+  <div class="film-strip-container" id="filmStripContainer">
+    <button class="film-nav film-prev" onclick="filmScroll(-1)">❮</button>
+    <div class="film-strip" id="filmStrip">
+      <!--
+        COMO ADICIONAR FOTOS AO ROLO:
+        Substitua o conteúdo .frame-inner por: <img src="sua-foto.jpg" />
+        Você pode adicionar mais <div class="film-frame"> abaixo
+      -->
+      <div class="film-frame" onclick="openLightbox('film0')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film0"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/COS%20DA%20SILVA.jpg"></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame active" onclick="openLightbox('film1')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film1"> <img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/COS%20ABRA%C3%87O.jpg"></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film2')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film2"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/idoso%20carro.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film3')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film3"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/CAFEZINHO.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film4')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film4"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/BEIJO.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film5')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film5"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/foto%20testa%20idoso.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film6')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film6"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/MCR.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film7')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film7"><img src="https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/refs/heads/main/ABRA%C3%87O.jpg" /></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+    </div>
+    <button class="film-nav film-next" onclick="filmScroll(1)">❯</button>
+  </div>
+
+  <!-- Botões de música (topo direito) -->
+  <div class="music-top-buttons">
+    <button onclick="togglePlaylistPanel()" title="Playlist">♪</button>
+    <button onclick="toggleMute()" id="muteBtn" title="Mudo/Som">🔊</button>
+  </div>
+
+  <!-- Painel da playlist -->
+  <div class="playlist-panel" id="playlistPanel">
+    <div class="playlist-title">🎵 Playlist</div>
+    <ul id="playlistItems"></ul>
+  </div>
+
+  <!-- ======== MODAL CARTA ======== -->
+  <div class="modal-overlay" id="letterModal" onclick="closeLetterModal(event)">
+    <div class="modal-envelope" id="modalEnvelope">
+      <div class="modal-env-wrapper">
+        <div class="modal-env-body"></div>
+        <div class="modal-env-flap" id="modalFlap"></div>
+        <div class="modal-env-heart">♥</div>
+      </div>
+      <div class="modal-letter" id="modalLetter">
+        <div class="modal-letter-inner">
+          <div class="modal-letter-title" id="modalTitle">Carta 01</div>
+          <div class="modal-letter-date" id="modalDate">14/02</div>
+          <div class="modal-letter-content" id="modalContent">Texto da carta...</div>
+          <div class="modal-letter-sig">Com todo meu amor ♥</div>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeLetterModal()">✕ Fechar</button>
+    </div>
+  </div>
+
+  <!-- ======== LIGHTBOX ======== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
