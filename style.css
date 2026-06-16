@@ -1263,3 +1263,45 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
 ::-webkit-scrollbar-thumb { background: #8b4513; border-radius: 3px; }
+
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .book-area {
+    width: 100%;
+    padding: 0;
+  }
+
+  .scene {
+    width: 100%;
+  }
+
+  .book {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .page {
+    min-height: 400px;
+  }
+
+  .spine {
+    display: none;
+  }
+}
