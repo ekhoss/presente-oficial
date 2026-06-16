@@ -1266,15 +1266,12 @@ body {
 
 
 @media (max-width: 768px) {
-  .main-layout {
-    transform: scale(0.75);
-    transform-origin: top left;
-    width: 133%;
-    height: 133%;
-  }
-
   html, body {
     overflow: auto;
+  }
+
+  .main-layout {
+    min-width: 900px;
   }
 }
 
