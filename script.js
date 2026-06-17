@@ -20,13 +20,19 @@ const PLAYLIST = [
   { title: "Beginning Middle End",artist: "Leah Nobel",src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Leah%20Nobel%20-%20Beginning%20Middle%20End%20%28Always%20and%20Forever%20Mix%20Fr.mp3" },
   { title: "No. 1 Party Anthem", artist: "Arctic Monkeys",          src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/06%20Arctic%20Monkeys%20-%20No.%201%20Party%20Anthem.mp3" },
   { title: "Lovers",artist: "Anna Of The North",src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/03%20Anna%20Of%20The%20North%20-%20Lovers.mp3" },
+  { title: "Mystery of Love ",         artist: "Sufjan Stevens",    src: "https://cdn.jsdelivr.net/gh/ekhoss/ARQUIVOS-PRESENTE@main/Sufjan%20Stevens%20-%20Mystery%20of%20Love%20%281%29.mp3" },
   { title: "Baby I m Yours", artist: "Arctic Monkeys",          src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Arctic%20Monkeys%20-%20Baby%20I%20m%20Yours.mp3" },
   { title: "Opera House",         artist: "Cigarettes After Sex",    src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Cigarettes%20After%20Sex%20-%20Opera%20House.mp3" },
   { title: "Cassandra",         artist: "Cos Sylvan",    src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Cos%20Sylvan%20-%20Cassandra.mp3" },
   { title: "Lovers Rock",         artist: "TV Girl",    src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/TV%20Girl%20-%20Lovers%20Rock.mp3" },
   { title: "Sky Is Falling",         artist: "Bones Shredder",    src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Bones%20Shredder%20-%20Sky%20Is%20Falling.mp3" },
   { title: "Pulling Teeth",         artist: "Bones Shredder",    src: "https://raw.githubusercontent.com/ekhoss/ARQUIVOS-PRESENTE/main/Bones%20Shredder%20-%20Pulling%20Teeth.mp3" },
+  { title: "Death with Dignity",         artist: "Sufjan Stevens",    src: "https://cdn.jsdelivr.net/gh/ekhoss/ARQUIVOS-PRESENTE@main/01%20Sufjan%20Stevens%20-%20Death%20with%20Dignity.mp3" },
+  { title: "Futile Devices (Doveman Remix)",         artist: "Sufjan Stevens",    src: "https://cdn.jsdelivr.net/gh/ekhoss/ARQUIVOS-PRESENTE@main/09%20Sufjan%20Stevens%20-%20Futile%20Devices%20%28Doveman%20Remix%29.mp3" },
+  { title: "Romantic Flight",         artist: "John Powell",    src: "https://cdn.jsdelivr.net/gh/ekhoss/ARQUIVOS-PRESENTE@main/John%20Powell%20-%20Romantic%20Flight.mp3" },
   { title: "The End!",         artist: "Eu espero que você tenha gostado",    src: "https://cdn.jsdelivr.net/gh/ekhoss/ARQUIVOS-PRESENTE@main/WhatsApp%20Audio%202026-06-15%20at%2021.00.19.mpeg" },
+  { title: "",         artist: "",    src: "" },
+
 ];
 
 const LETTER_DATES = [
